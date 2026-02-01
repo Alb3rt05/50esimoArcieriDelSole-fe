@@ -4,6 +4,8 @@
   /* Sole */
   --color-secondary: #E30613;
   /* Freccia */
+  --color-sun-yellow: #FFCC00;
+  /* Giallo Sole - Brand Color */
   --color-text: #707070;
   /* Grigio Antracite */
   --color-bg: #ffffff;
@@ -11,7 +13,7 @@
   --font-main: 'Outfit', sans-serif;
   --font-hand: 'Caveat', cursive;
   /* New variable for creative text */
-  --color-gradient-solar: linear-gradient(135deg, #FF8800 0%, #E30613 100%);
+  --color-gradient-solar: linear-gradient(135deg, #FFCC00 0%, #FF8800 50%, #E30613 100%);
 }
 
 /* Solar Text Gradient Utility */
