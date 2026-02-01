@@ -1,21 +1,20 @@
 import { Component, OnInit } from '@angular/core';
-
+import { CommonModule } from '@angular/common'; // Fix NG8103
 import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { GoogleSheetsService } from '../../services/google-sheets.service';
 import { finalize } from 'rxjs/operators';
 
 @Component({
-    selector: 'app-rsvp',
-    imports: [ReactiveFormsModule],
-    templateUrl: './rsvp.component.html',
-    styleUrls: ['./rsvp.component.scss']
+  selector: 'app-rsvp',
+  standalone: true,
+  imports: [ReactiveFormsModule, CommonModule], // Fix NG8103
+  templateUrl: './rsvp.component.html',
+  styleUrls: ['./rsvp.component.scss']
 })
 export class RsvpComponent implements OnInit {
   rsvpForm: FormGroup;
-  isLoading = false;
-  submitted = false;
-  errorMsg = '';
-  successMsg = '';
+  isSubmitting = false; // Fix TS2339
+  submitStatus: 'idle' | 'success' | 'error' = 'idle'; // Fix TS2339
   isExpired = false;
 
   // Cut-off date: 15 March 2026
@@ -61,22 +60,25 @@ export class RsvpComponent implements OnInit {
   onSubmit() {
     if (this.rsvpForm.invalid || this.isExpired) return;
 
-    this.isLoading = true;
-    this.rsvpForm.disable(); // Prevent double submission
+    this.isSubmitting = true; // Use isSubmitting
+    this.submitStatus = 'idle';
+    this.rsvpForm.disable();
 
     this.sheetsService.postRSVP(this.rsvpForm.getRawValue()).pipe(
       finalize(() => {
-        this.isLoading = false;
-        // Keep form disabled on success
+        this.isSubmitting = false;
+        // Keep form disabled on success, or re-enable on error
+        if (this.submitStatus === 'error') {
+          this.rsvpForm.enable();
+        }
       })
     ).subscribe({
       next: (res) => {
-        this.successMsg = 'Grazie! La tua presenza è stata registrata.';
-        this.submitted = true;
+        this.submitStatus = 'success';
       },
       error: (err) => {
-        this.errorMsg = 'Si è verificato un errore. Riprova più tardi.';
-        this.rsvpForm.enable(); // Re-enable on error to allow retry
+        console.error(err);
+        this.submitStatus = 'error';
       }
     });
   }

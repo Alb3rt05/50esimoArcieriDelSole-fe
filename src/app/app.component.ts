@@ -7,6 +7,7 @@ import { LocationComponent } from './components/location/location.component';
 import { RsvpComponent } from './components/rsvp/rsvp.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { BackToTopComponent } from './shared/back-to-top/back-to-top.component';
+import { GalleryComponent } from './components/gallery/gallery.component';
 
 @Component({
   selector: 'app-root',
@@ -16,6 +17,7 @@ import { BackToTopComponent } from './shared/back-to-top/back-to-top.component';
     HeaderComponent,
     HeroComponent,
     ProgramComponent,
+    GalleryComponent,
     LocationComponent,
     RsvpComponent,
     FooterComponent,

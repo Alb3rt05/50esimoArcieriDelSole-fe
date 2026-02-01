@@ -27,8 +27,20 @@
 .content {
     position: relative;
     z-index: 10;
-    max-width: 800px;
+    max-width: 900px;
     padding: 20px;
+}
+
+.welcome-text {
+    font-family: var(--font-hand);
+    font-size: 2.2rem;
+    /* Larger for script font */
+    color: var(--color-primary);
+    transform: rotate(-2deg);
+    margin-bottom: 0;
+    text-shadow: none;
+    text-transform: none;
+    /* Keep natural case for script */
 }
 
 h1 {
@@ -36,19 +48,36 @@ h1 {
     margin-bottom: 0.5rem;
     color: white;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    text-transform: uppercase;
+    line-height: 1.1;
+    font-family: var(--font-main);
 }
 
-h2 {
+.date-text {
     font-size: 2rem;
-    font-weight: 300;
+    font-weight: 700;
+    color: white;
     margin-bottom: 2rem;
-    color: #eeeeee;
+    letter-spacing: 5px;
 }
 
-p {
-    font-size: 1.5rem;
-    margin-bottom: 3rem;
-    font-weight: 600;
+.taglines p {
+    font-family: var(--font-hand);
+    font-size: 1.8rem;
+    margin-bottom: 0.2rem;
+    font-weight: 500;
+    color: #fff;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.cta-group {
+    margin-top: 3rem;
+}
+
+.cta-title {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    color: white;
 }
 
 .cta-btn {

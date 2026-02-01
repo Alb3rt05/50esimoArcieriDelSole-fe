@@ -1,32 +1,63 @@
-<section class="container mt-2 mb-2">
-    <div class="text-center mb-2">
-        <h2>Il Programma</h2>
-        <p>Domenica XX Mese 2026 - Dalle 15:00 alle 18:00</p>
+<section class="container mt-2 mb-2 relative-container">
+    <div class="text-center mb-2 intro-program">
+        <h2 class="text-solar" style="font-family: var(--font-hand); font-size: 4rem;">Il Programma</h2>
+        <div class="program-details">
+            <p class="highlight">QUANDO: Domenica XX Mese 2026</p>
+            <p class="highlight">ORARIO: 15:00 - 18:00</p>
+            <p class="location-hint" style="font-family: var(--font-hand); font-size: 1.5rem;">(segui il percorso...)
+            </p>
+        </div>
     </div>
 
-    <div class="program-grid">
-        <div class="card">
-            <div class="icon-circle">🎁</div> <!-- Placeholder icon -->
-            <h3>Accoglienza</h3>
-            <p>Benvenuto e consegna gadget per tutti i partecipanti.</p>
+    <div class="timeline">
+        <!-- Connecting Line -->
+        <div class="timeline-line"></div>
+
+        <!-- Step 1 -->
+        <div class="timeline-item left">
+            <div class="timeline-dot">🥂</div>
+            <div class="timeline-content">
+                <h3 class="hand-font">Sala Rinfresco</h3>
+                <p>Un buffet con tante sfiziosità e bollicine.</p>
+                <div class="sub-content">
+                    <strong>Angolo Accoglienza:</strong><br>
+                    Qui ti chiederemo di registrarti. Ti verrà consegnata la sacca con i gadget!
+                </div>
+            </div>
         </div>
 
-        <div class="card">
-            <div class="icon-circle">🏹</div> <!-- Placeholder icon -->
-            <h3>La Gara</h3>
-            <p>5 volèe a 15 metri. Mettiti alla prova!</p>
+        <!-- Step 2 -->
+        <div class="timeline-item right">
+            <div class="timeline-dot">🏹</div>
+            <div class="timeline-content highlight">
+                <h3 class="hand-font">La Gara</h3>
+                <p><strong>SI! Hai capito bene!</strong></p>
+                <p>5 volèe a 15 metri. Porta il tuo arco o usa i nostri!</p>
+                <p class="fun-note">Potrai tenerti la targa e salire sul podio!</p>
+            </div>
         </div>
 
-        <div class="card">
-            <div class="icon-circle">🥂</div> <!-- Placeholder icon -->
-            <h3>Buffet</h3>
-            <p>Rinfresco offerto per celebrare insieme.</p>
+        <!-- Step 3 -->
+        <div class="timeline-item left">
+            <div class="timeline-dot">🎯</div>
+            <div class="timeline-content">
+                <h3 class="hand-font">Prova di Tiro</h3>
+                <p>Un bersaglio a 5 metri per chi vuole provare a tirare le prime frecce con i nostri istruttori!</p>
+            </div>
         </div>
 
-        <div class="card">
-            <div class="icon-circle">🏆</div> <!-- Placeholder icon -->
-            <h3>Premiazioni</h3>
-            <p>Riconoscimenti per tutti gli atleti.</p>
+        <!-- Step 4 -->
+        <div class="timeline-item right">
+            <div class="timeline-dot">🏆</div>
+            <div class="timeline-content">
+                <h3 class="hand-font">Premiazioni</h3>
+                <p>Foto e Riconoscimenti per tutti gli atleti!</p>
+            </div>
         </div>
+    </div>
+
+    <div class="text-center mt-2 final-message">
+        <h2 class="text-solar hand-font" style="transform: rotate(-2deg);">NON VEDIAMO L’ORA DI RIVEDERCI TUTTI QUANTI
+            INSIEME!</h2>
     </div>
 </section>

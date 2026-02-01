@@ -1,29 +1,41 @@
-<section class="container mt-2 mb-2">
+<section class="container mt-2 mb-2 relative-container">
     <div class="text-center mb-2">
-        <h2>La Location</h2>
-        <p>Ci trovi presso il Centro Sportivo di Solaro (MI)</p>
+        <h2 class="text-solar hand-font" style="font-size: 4rem;">La Posizione</h2>
+        <p class="hand-font" style="font-size: 1.5rem; color: var(--color-text-light); transform: rotate(-1deg);">Segui
+            la mappa per trovare il tesoro!</p>
     </div>
 
-    <div class="location-content">
-        <div class="map-container">
-            <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2790.669842880056!2d9.081!3d45.619!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDXCsDM3JzA4LjQiTiA5wrAwNCcxNS42IkU!5e0!3m2!1sit!2sit!4v1600000000000!5m2!1sit!2sit"
-                width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy">
-            </iframe>
+    <div class="location-creative-layout">
+        <!-- The Map stylized as a physical object -->
+        <div class="map-polaroid">
+            <div class="pin">📍</div>
+            <div class="map-frame">
+                <iframe title="Mappa Tensostruttura Solaro"
+                    src="https://maps.google.com/maps?q=Via+Drizza+20,+Solaro+MI&t=k&z=18&ie=UTF8&iwloc=&output=embed"
+                    width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy">
+                </iframe>
+            </div>
+            <div class="caption hand-font">Via Drizza 20, Solaro (MI)</div>
         </div>
 
-        <div class="info-panel">
-            <div class="info-item">
-                <h3>🚗 Parcheggio</h3>
-                <p>Ampio parcheggio gratuito disponibile all'ingresso del centro sportivo.</p>
+        <!-- Info Cards stylized as pinned notes -->
+        <div class="notes-container">
+            <div class="note-card note-yellow">
+                <div class="tape"></div>
+                <h3 class="hand-font">🅿️ Parcheggi</h3>
+                <p>Non preoccuparti per l'auto! Abbiamo tantissimo spazio gratuito proprio davanti all'ingresso.</p>
             </div>
-            <div class="info-item">
-                <h3>🎉 Sala Rinfresco</h3>
-                <p>Dopo la gara ci sposteremo nella sala polifunzionale per il buffet.</p>
+
+            <div class="note-card note-white">
+                <div class="tape"></div>
+                <h3 class="hand-font">🏟️ Tensostruttura</h3>
+                <p>Il cuore dell'azione! Qui troverai il campo di gara e potrai provare a tirare.</p>
             </div>
-            <div class="info-item">
-                <h3>🏹 Campo di Gara</h3>
-                <p>La gara si svolgerà presso la tensostruttura coperta.</p>
+
+            <div class="note-card note-blue">
+                <div class="tape"></div>
+                <h3 class="hand-font">🥂 Sala Rinfresco</h3>
+                <p>Per rilassarsi dopo la gara con cibo e bollicine!</p>
             </div>
         </div>
     </div>

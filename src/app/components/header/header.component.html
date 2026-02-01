@@ -1,28 +1,32 @@
 <header [class.scrolled]="isScrolled">
-    <div class="container header-content">
-        <div class="logo">
-            <!-- Placeholder for Logo Arcieri -->
-            <span>Arcieri del Sole</span>
+    <div class="header-content">
+        <div class="logo-container">
+            <div class="logo-img">
+                <img src="assets/images/icons/arcieriLogoNormale.svg" alt="Logo Arcieri del Sole" />
+            </div>
+            <div class="logo-text-img">
+                <img src="assets/images/icons/arcieriLogoScritta.svg" alt="Arcieri del Sole" />
+            </div>
         </div>
 
         <nav [class.active]="menuOpen">
             <ul>
-                <li><a (click)="scrollTo('intro'); toggleMenu()">Home</a></li>
+                <li><a (click)="scrollTo('intro'); toggleMenu()">Intro</a></li>
                 <li><a (click)="scrollTo('program'); toggleMenu()">Programma</a></li>
                 <li><a (click)="scrollTo('location'); toggleMenu()">Location</a></li>
-                <li><a (click)="scrollTo('rsvp'); toggleMenu()" class="cta-btn">RSVP</a></li>
+                <li><a (click)="scrollTo('rsvp'); toggleMenu()">Partecipa</a></li>
             </ul>
         </nav>
+
+        <div class="logo-50-container desktop-only">
+            <span class="logo-50-text">50°</span>
+            <span class="logo-50-sub">Anniversario</span>
+        </div>
 
         <div class="hamburger" (click)="toggleMenu()">
             <span></span>
             <span></span>
             <span></span>
-        </div>
-
-        <div class="logo-50">
-            <!-- Placeholder for Logo 50th -->
-            <span>50°</span>
         </div>
     </div>
 </header>

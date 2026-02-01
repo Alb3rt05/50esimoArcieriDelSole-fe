@@ -1,40 +1,153 @@
-.location-content {
+.location-creative-layout {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 3rem;
+    align-items: flex-start;
+    padding: 2rem 0;
+}
+
+.hand-font {
+    font-family: var(--font-hand);
+}
+
+/* Polaraiod Map Style */
+.map-polaroid {
+    background: white;
+    padding: 15px 15px 45px 15px;
+    /* Bottom padding for caption */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    background-color: white;
+    transform: rotate(-2deg);
+    transition: transform 0.3s ease;
+    width: 100%;
+    max-width: 550px;
+    position: relative;
+    border: 1px solid #eee;
+}
+
+.map-polaroid:hover {
+    transform: rotate(0deg) scale(1.02);
+    z-index: 10;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+.map-frame {
+    width: 100%;
+    height: 350px;
+    overflow: hidden;
+    background: #eee;
+    border: 1px solid #ddd;
+}
+
+.map-polaroid .caption {
+    font-size: 1.5rem;
+    color: #555;
+    text-align: center;
+    margin-top: 10px;
+    font-weight: 700;
+}
+
+.pin {
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2rem;
+    z-index: 20;
+    filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.2));
+}
+
+/* Pinned Notes Container */
+.notes-container {
     display: flex;
     flex-direction: column;
     gap: 2rem;
+    max-width: 350px;
+    padding-top: 20px;
 }
 
-.map-container {
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+.note-card {
+    padding: 1.5rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    position: relative;
+    font-family: var(--font-main);
 }
 
-.info-panel {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1.5rem;
+/* Different Note Styles */
+.note-yellow {
+    background: #fff9c4;
+    /* Post-it Yellow */
+    transform: rotate(2deg);
 }
 
-.info-item h3 {
-    font-size: 1.2rem;
-    margin-bottom: 0.5rem;
-    color: var(--color-secondary);
+.note-white {
+    background: white;
+    border: 1px solid #eee;
+    transform: rotate(-1deg);
 }
 
-@media (min-width: 768px) {
-    .location-content {
-        flex-direction: row;
-    }
+.note-blue {
+    background: #e3f2fd;
+    /* Light Blue */
+    transform: rotate(1.5deg);
+}
 
-    .map-container {
-        flex: 2;
-    }
+/* Tape Effect */
+.tape {
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 25px;
+    background: rgba(255, 255, 255, 0.5);
+    /* Semi-transparent tape */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    z-index: 5;
+    /* Irregular edges using clip-path could be added, but simple transparency works well for tape */
+}
 
-    .info-panel {
-        flex: 1;
-        display: flex;
+.note-card h3 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.6rem;
+    color: #333;
+}
+
+.note-card p {
+    margin: 0;
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.4;
+}
+
+.note-card:hover {
+    transform: scale(1.05) rotate(0deg);
+    z-index: 10;
+}
+
+@media (max-width: 900px) {
+    .location-creative-layout {
         flex-direction: column;
+        align-items: center;
+    }
+
+    .map-polaroid {
+        transform: rotate(0deg);
+        width: 100%;
+    }
+
+    .notes-container {
+        width: 100%;
+        max-width: 100%;
+        flex-direction: row;
+        flex-wrap: wrap;
         justify-content: center;
+    }
+
+    .note-card {
+        width: 100%;
+        max-width: 300px;
     }
 }

@@ -1,11 +1,26 @@
 /* Global Styles */
 :root {
-  --color-primary: #FF8800; /* Sole */
-  --color-secondary: #E30613; /* Freccia */
-  --color-text: #707070; /* Grigio Antracite */
+  --color-primary: #FF8800;
+  /* Sole */
+  --color-secondary: #E30613;
+  /* Freccia */
+  --color-text: #707070;
+  /* Grigio Antracite */
   --color-bg: #ffffff;
   --color-light-gray: #f5f5f5;
   --font-main: 'Outfit', sans-serif;
+  --font-hand: 'Caveat', cursive;
+  /* New variable for creative text */
+  --color-gradient-solar: linear-gradient(135deg, #FF8800 0%, #E30613 100%);
+}
+
+/* Solar Text Gradient Utility */
+.text-solar {
+  background: var(--color-gradient-solar);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: inline-block;
 }
 
 * {
@@ -21,7 +36,12 @@ body {
   overflow-x: hidden;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   color: var(--color-primary);
   font-weight: 700;
   margin-bottom: 1rem;
@@ -45,14 +65,33 @@ img {
   padding: 0 20px;
 }
 
-.text-center { text-align: center; }
-.mt-1 { margin-top: 1rem; }
-.mt-2 { margin-top: 2rem; }
-.mb-1 { margin-bottom: 1rem; }
-.mb-2 { margin-bottom: 2rem; }
+.text-center {
+  text-align: center;
+}
+
+.mt-1 {
+  margin-top: 1rem;
+}
+
+.mt-2 {
+  margin-top: 2rem;
+}
+
+.mb-1 {
+  margin-bottom: 1rem;
+}
+
+.mb-2 {
+  margin-bottom: 2rem;
+}
 
 /* Responsive */
 @media (max-width: 768px) {
-  h1 { font-size: 2rem; }
-  h2 { font-size: 1.75rem; }
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.75rem;
+  }
 }

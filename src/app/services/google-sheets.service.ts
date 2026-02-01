@@ -21,11 +21,13 @@ export class GoogleSheetsService {
       // Or fail appropriately
     }
 
-    // Google Apps Script requires JSON string payloads often, but Angular sends JSON object by default.
-    // Usually standard POST JSON works if Apps Script handles it with e.postData.contents
-    return this.http.post(this.apiUrl, data).pipe(
+    // Google Apps Script requires JSON string payloads to be sent as text/plain to avoid CORS preflight issues.
+    const headers = { 'Content-Type': 'text/plain; charset=utf-8' };
+
+    return this.http.post(this.apiUrl, JSON.stringify(data), { headers }).pipe(
       catchError(this.handleError)
     );
+
   }
 
   private handleError(error: HttpErrorResponse) {
