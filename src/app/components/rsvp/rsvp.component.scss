@@ -1,0 +1,103 @@
+.rsvp-section {
+    max-width: 800px;
+    background: white;
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.rsvp-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form-row {
+    display: flex;
+    gap: 1rem;
+}
+
+.form-group {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--color-text);
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="number"] {
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-family: inherit;
+    transition: border-color 0.3s;
+}
+
+input:focus {
+    outline: none;
+    border-color: var(--color-primary);
+}
+
+.radio-group .radios {
+    display: flex;
+    gap: 2rem;
+}
+
+.checkbox-group {
+    font-size: 0.9rem;
+}
+
+.btn-submit {
+    background: var(--color-primary);
+    color: white;
+    padding: 1rem;
+    border: none;
+    border-radius: 8px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.btn-submit:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+}
+
+.btn-submit:hover:not(:disabled) {
+    background: #ff9900;
+}
+
+.alert {
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.alert-warning {
+    background: #fff3cd;
+    color: #856404;
+}
+
+.alert-success {
+    background: #d4edda;
+    color: #155724;
+}
+
+.alert-danger {
+    background: #f8d7da;
+    color: #721c24;
+}
+
+@media (max-width: 600px) {
+    .form-row {
+        flex-direction: column;
+    }
+}

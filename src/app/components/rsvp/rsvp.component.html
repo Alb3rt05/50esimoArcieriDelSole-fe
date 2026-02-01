@@ -1,0 +1,82 @@
+<section class="container mt-2 mb-2 rsvp-section">
+  <div class="text-center mb-2">
+    <h2>RSVP</h2>
+    <p>Conferma la tua presenza entro il 15 Marzo 2026</p>
+  </div>
+
+  @if (isExpired) {
+    <div class="alert alert-warning">
+      Le prenotazioni sono chiuse. Per variazioni dell'ultimo minuto, contattaci direttamente.
+    </div>
+  }
+
+  @if (successMsg) {
+    <div class="alert alert-success">
+      {{ successMsg }}
+    </div>
+  }
+
+  @if (errorMsg) {
+    <div class="alert alert-danger">
+      {{ errorMsg }}
+    </div>
+  }
+
+  @if (!submitted && !isExpired) {
+    <form [formGroup]="rsvpForm" (ngSubmit)="onSubmit()" class="rsvp-form">
+      <div class="form-row">
+        <div class="form-group">
+          <label for="nome">Nome *</label>
+          <input id="nome" type="text" formControlName="nome" placeholder="Il tuo nome">
+        </div>
+        <div class="form-group">
+          <label for="cognome">Cognome *</label>
+          <input id="cognome" type="text" formControlName="cognome" placeholder="Il tuo cognome">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="email">Email *</label>
+          <input id="email" type="email" formControlName="email" placeholder="latua@email.com">
+        </div>
+        <div class="form-group">
+          <label for="cellulare">Cellulare *</label>
+          <input id="cellulare" type="tel" formControlName="cellulare" placeholder="Only numbers">
+        </div>
+      </div>
+      <div class="form-group radio-group">
+        <label>Sarai presente?</label>
+        <div class="radios">
+          <label><input type="radio" formControlName="presenza" value="SI"> SI</label>
+          <label><input type="radio" formControlName="presenza" value="NO"> NO</label>
+        </div>
+      </div>
+      @if (rsvpForm.get('presenza')?.value === 'SI') {
+        <div class="form-row">
+          <div class="form-group">
+            <label for="adulti">Numero Adulti</label>
+            <input id="adulti" type="number" formControlName="adulti" min="0">
+          </div>
+          <div class="form-group">
+            <label for="bambini">Numero Bambini</label>
+            <input id="bambini" type="number" formControlName="bambini" min="0">
+          </div>
+        </div>
+      }
+      <div class="form-group checkbox-group">
+        <label>
+          <input type="checkbox" formControlName="privacy">
+          Acconsento al trattamento dei dati per la gestione dell'evento (Privacy Policy) *
+        </label>
+      </div>
+      <button type="submit" [disabled]="rsvpForm.invalid || isLoading" class="btn-submit">
+        @if (!isLoading) {
+          <span>INVIA CONFERMA</span>
+        }
+        @if (isLoading) {
+          <span>INVIO IN CORSO...</span>
+        }
+      </button>
+    </form>
+  }
+</section>

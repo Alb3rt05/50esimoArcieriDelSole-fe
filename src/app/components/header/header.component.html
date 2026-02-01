@@ -1,0 +1,28 @@
+<header [class.scrolled]="isScrolled">
+    <div class="container header-content">
+        <div class="logo">
+            <!-- Placeholder for Logo Arcieri -->
+            <span>Arcieri del Sole</span>
+        </div>
+
+        <nav [class.active]="menuOpen">
+            <ul>
+                <li><a (click)="scrollTo('intro'); toggleMenu()">Home</a></li>
+                <li><a (click)="scrollTo('program'); toggleMenu()">Programma</a></li>
+                <li><a (click)="scrollTo('location'); toggleMenu()">Location</a></li>
+                <li><a (click)="scrollTo('rsvp'); toggleMenu()" class="cta-btn">RSVP</a></li>
+            </ul>
+        </nav>
+
+        <div class="hamburger" (click)="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <div class="logo-50">
+            <!-- Placeholder for Logo 50th -->
+            <span>50°</span>
+        </div>
+    </div>
+</header>
