@@ -1,21 +1,62 @@
 <section class="hero-container">
-    <div class="overlay"></div>
-    <div class="content text-center">
-        <p class="welcome-text animate-up">Benvenuto all’evento celebrativo</p>
-        <h1 class="animate-up delay-1">50 anni degli Arcieri del Sole</h1>
-        <p class="date-text animate-up delay-1">1976 – 2026</p>
+    <!-- Background Slideshow -->
+    <div class="bg-slideshow">
+        <div *ngFor="let img of backgroundImages; let i = index" class="slide-item"
+            [style.background-image]="'url(' + img + ')'" [class.active]="i === currentImageIndex">
+        </div>
+        <div class="white-overlay"></div>
+    </div>
 
-        <div class="taglines animate-up delay-2">
-            <p>UN POMERIGGIO INDIMENTICABILE</p>
-            <p>UN TUFFO NEL PASSATO</p>
-            <p>CI SARANNO TUTTI!</p>
-            <p>UN MOMENTO PER STARE INSIEME</p>
-            <p>PER RITROVARSI E RIVIVERE IL PASSATO</p>
+    <!-- Spinning Sunburst Background (More Lines!) -->
+    <div class="sunburst-bg">
+        <div class="ray ray-1"></div>
+        <div class="ray ray-2"></div>
+        <div class="ray ray-3"></div>
+        <div class="ray ray-4"></div>
+        <div class="ray ray-5"></div>
+        <div class="ray ray-6"></div>
+        <div class="ray ray-7"></div>
+        <div class="ray ray-8"></div>
+        <div class="ray ray-9"></div>
+        <div class="ray ray-10"></div>
+        <div class="ray ray-11"></div>
+        <div class="ray ray-12"></div>
+        <div class="ray ray-13"></div>
+        <div class="ray ray-14"></div>
+        <div class="ray ray-15"></div>
+    </div>
+
+    <div class="content relative-container">
+
+        <div class="hero-composition">
+            <!-- The Giant 50 -->
+            <div class="huge-number-container">
+                <span class="huge-50 text-solar-gradient">50</span>
+                <span class="years-badge">1976-2026</span>
+            </div>
+
+            <!-- Overlapping Text -->
+            <div class="text-layer animate-up delay-1">
+                <h2 class="welcome-script">Buon Compleanno</h2>
+                <h1 class="brand-title">Arcieri del Sole</h1>
+                <p class="hero-subtitle">Mezzo secolo di passione, sport e amicizia.</p>
+            </div>
+
+            <div class="cta-wrapper animate-up delay-2">
+                <a (click)="scrollTo('program')" class="cta-btn primary-btn">
+                    FESTEGGIA CON NOI
+                </a>
+            </div>
         </div>
 
-        <div class="cta-group animate-up delay-3">
-            <h3 class="cta-title">VIENI A FESTEGGIARE CON NOI</h3>
-            <a (click)="scrollTo('program')" class="cta-btn">LEGGI IL PROGRAMMA</a>
-        </div>
+    </div>
+
+    <!-- Organic Wave Divider -->
+    <div class="hero-wave">
+        <svg viewBox="0 0 1440 320" xmlns="http://www.w3.org/2000/svg">
+            <path fill="#ffffff" fill-opacity="1"
+                d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,160C1248,160,1344,128,1392,112L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z">
+            </path>
+        </svg>
     </div>
 </section>

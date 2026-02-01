@@ -1,63 +1,76 @@
 <section class="container mt-2 mb-2 relative-container">
     <div class="text-center mb-2 intro-program">
-        <h2 class="text-solar" style="font-family: var(--font-hand); font-size: 4rem;">Il Programma</h2>
+        <h2 class="text-solar creative-title">Il Percorso della Giornata</h2>
         <div class="program-details">
-            <p class="highlight">QUANDO: Domenica XX Mese 2026</p>
-            <p class="highlight">ORARIO: 15:00 - 18:00</p>
-            <p class="location-hint" style="font-family: var(--font-hand); font-size: 1.5rem;">(segui il percorso...)
-            </p>
+            <span class="badge-solar">Domenica XX Mese 2026</span>
+            <span class="badge-solar">15:00 - 18:00</span>
         </div>
+        <p class="location-hint">(segui il percorso...)</p>
     </div>
 
-    <div class="timeline">
-        <!-- Connecting Line -->
-        <div class="timeline-line"></div>
+    <!-- Asymmetric Rhythm Grid (1 - 2 - 1) -->
+    <div class="rhythm-grid">
 
-        <!-- Step 1 -->
-        <div class="timeline-item left">
-            <div class="timeline-dot">🥂</div>
-            <div class="timeline-content">
-                <h3 class="hand-font">Sala Rinfresco</h3>
-                <p>Un buffet con tante sfiziosità e bollicine.</p>
-                <div class="sub-content">
-                    <strong>Angolo Accoglienza:</strong><br>
-                    Qui ti chiederemo di registrarti. Ti verrà consegnata la sacca con i gadget!
+        <!-- ROW 1: FULL WIDTH -->
+        <div class="rhythm-card full-width animate-up delay-1">
+            <div class="card-inner">
+                <div class="icon-circle">🥂</div>
+                <div class="content-text">
+                    <span class="step-label">INIZIO ORE 15:00</span>
+                    <h3 class="hand-font">Sala Rinfresco</h3>
+                    <p>Un buffet con tante sfiziosità e bollicine per iniziare alla grande.</p>
+                    <div class="sub-content">
+                        <strong>Angolo Accoglienza:</strong> Qui ti chiederemo di registrarti. Ti verrà consegnata la
+                        sacca con i gadget!
+                    </div>
                 </div>
             </div>
         </div>
 
-        <!-- Step 2 -->
-        <div class="timeline-item right">
-            <div class="timeline-dot">🏹</div>
-            <div class="timeline-content highlight">
-                <h3 class="hand-font">La Gara</h3>
-                <p><strong>SI! Hai capito bene!</strong></p>
-                <p>5 volèe a 15 metri. Porta il tuo arco o usa i nostri!</p>
-                <p class="fun-note">Potrai tenerti la targa e salire sul podio!</p>
+        <!-- ROW 2: SPLIT (Action Phase) -->
+        <div class="split-row">
+            <div class="rhythm-card half-width highlight animate-up delay-2">
+                <div class="card-inner">
+                    <div class="icon-circle">🏹</div>
+                    <div class="content-text">
+                        <span class="step-label">LA SFIDA</span>
+                        <h3 class="hand-font">La Gara</h3>
+                        <p><strong>SI! Hai capito bene!</strong></p>
+                        <p>5 volèe a 15 metri. Porta il tuo arco o usa i nostri! <br><span class="fun-note">Tieni la
+                                targa!</span></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="rhythm-card half-width animate-up delay-3">
+                <div class="card-inner">
+                    <div class="icon-circle">🎯</div>
+                    <div class="content-text">
+                        <span class="step-label">PER I CURIOSI</span>
+                        <h3 class="hand-font">Prova di Tiro</h3>
+                        <p>Un bersaglio a 5 metri per chi vuole provare a tirare le prime frecce con i nostri
+                            istruttori!</p>
+                    </div>
+                </div>
             </div>
         </div>
 
-        <!-- Step 3 -->
-        <div class="timeline-item left">
-            <div class="timeline-dot">🎯</div>
-            <div class="timeline-content">
-                <h3 class="hand-font">Prova di Tiro</h3>
-                <p>Un bersaglio a 5 metri per chi vuole provare a tirare le prime frecce con i nostri istruttori!</p>
+        <!-- ROW 3: FULL WIDTH -->
+        <div class="rhythm-card full-width last-step animate-up delay-4">
+            <div class="card-inner">
+                <div class="icon-circle">🏆</div>
+                <div class="content-text">
+                    <span class="step-label">GRAN FINALE</span>
+                    <h3 class="hand-font">Premiazioni</h3>
+                    <p>Foto e Riconoscimenti per tutti gli atleti!</p>
+                </div>
             </div>
         </div>
 
-        <!-- Step 4 -->
-        <div class="timeline-item right">
-            <div class="timeline-dot">🏆</div>
-            <div class="timeline-content">
-                <h3 class="hand-font">Premiazioni</h3>
-                <p>Foto e Riconoscimenti per tutti gli atleti!</p>
-            </div>
-        </div>
     </div>
 
     <div class="text-center mt-2 final-message">
-        <h2 class="text-solar hand-font" style="transform: rotate(-2deg);">NON VEDIAMO L’ORA DI RIVEDERCI TUTTI QUANTI
-            INSIEME!</h2>
+        <h2 class="text-solar creative-title" style="transform: rotate(-2deg);">NON VEDIAMO L’ORA DI RIVEDERCI TUTTI
+            QUANTI INSIEME!</h2>
     </div>
 </section>

@@ -30,6 +30,10 @@
     font-family: var(--font-hand);
     font-size: 1.5rem;
     color: #888;
+    line-height: 1.6;
+    /* Safe height */
+    padding: 10px;
+    text-align: center;
 }
 
 /* Random Rotations to simulate scattered look */

@@ -31,12 +31,7 @@
     backdrop-filter: blur(2px);
 }
 
-.text-solar {
-    font-family: var(--font-hand);
-    font-size: 3rem;
-    line-height: 1;
-    margin-bottom: 0.5rem;
-}
+/* .text-solar handled globally with .creative-title */
 
 h2 {
     color: var(--color-primary);
@@ -74,7 +69,12 @@ label {
     color: var(--color-text);
     font-family: var(--font-hand);
     /* Handwritten labels */
-    font-size: 1.2rem;
+    font-size: 1.3rem;
+    line-height: 1.6;
+    /* Safe height */
+    padding: 5px 0;
+    /* Breathing room */
+    display: inline-block;
 }
 
 input[type="text"],
@@ -102,7 +102,9 @@ input:focus {
     display: flex;
     gap: 2rem;
     font-family: var(--font-hand);
-    font-size: 1.3rem;
+    font-size: 1.4rem;
+    line-height: 1.6;
+    padding: 5px 0;
 }
 
 .btn-submit {
@@ -139,7 +141,8 @@ input:focus {
     margin-bottom: 1rem;
     font-weight: 600;
     font-family: var(--font-hand);
-    font-size: 1.2rem;
+    font-size: 1.3rem;
+    line-height: 1.5;
 }
 
 .alert-success {
