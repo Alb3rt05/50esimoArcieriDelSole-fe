@@ -1,56 +1,55 @@
+/* Hero Section - Image Carousel + Central Logo */
 .hero-container {
-    min-height: 90vh;
-    /* Reduced from 100vh for better mobile control */
+    height: 100vh;
     width: 100%;
     position: relative;
-    background: #fff;
+    background: #050505;
+    /* Deep Black fallback */
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 60px 20px;
+    padding: 0 20px;
     overflow: hidden;
+    color: white;
 }
 
-/* Static Background - No JS, No Images */
-.static-bg {
+/* Background Slideshow */
+.bg-slideshow {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     z-index: 0;
-    pointer-events: none;
 }
 
-/* Simple, Static Solar Rings */
-.solar-ring {
+.slide-item {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    border-radius: 50%;
-    border: 1px solid rgba(227, 6, 19, 0.05);
-    /* Very subtle red */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out;
+    filter: brightness(0.9);
 }
 
-.ring-1 {
-    width: 120vw;
-    height: 120vw;
-    border-color: rgba(255, 136, 0, 0.05);
+.slide-item.active {
+    opacity: 1;
 }
 
-.ring-2 {
-    width: 90vw;
-    height: 90vw;
-    border-color: rgba(255, 136, 0, 0.08);
-    /* Revert to solar hint */
-}
-
-.ring-3 {
-    width: 60vw;
-    height: 60vw;
-    border-color: rgba(255, 136, 0, 0.08);
+/* Dark Overlay for Playability */
+.white-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    /* Flat dark overlay */
+    z-index: 1;
 }
 
 /* Content */
@@ -58,173 +57,165 @@
     position: relative;
     z-index: 10;
     width: 100%;
-    max-width: 800px;
+    max-width: 1000px;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .hero-composition {
     position: relative;
-    padding: 1rem 0;
+    padding: 2rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
 }
 
-/* The Huge 50 - Simplified */
-.huge-number-container {
-    position: relative;
-    line-height: normal;
-    margin-bottom: 20px;
+/* Central Logo */
+.hero-logo-center img {
+    height: 150px;
+    /* Desktop Size */
+    width: auto;
+    filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.5));
+    transition: transform 0.3s ease;
 }
 
-.huge-50 {
-    font-size: clamp(8rem, 25vw, 15rem);
-    /* Slightly smaller max size */
-    font-weight: 900;
-    font-family: var(--font-main);
-    /* Simple solid gradient */
-    background: var(--color-gradient-solar);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    display: inline-block;
-    filter: drop-shadow(0 4px 10px rgba(227, 6, 19, 0.1));
-    /* Red shadow */
+.hero-logo-center:hover img {
+    transform: scale(1.05);
 }
 
-.years-badge {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) rotate(-5deg);
-    background: white;
-    padding: 5px 15px;
-    border-radius: 50px;
-    color: var(--color-primary);
-    font-weight: 700;
-    font-family: var(--font-main);
-    font-size: 1.2rem;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-    border: 1px solid #eee;
-    white-space: nowrap;
-}
-
-/* Text Layer - Simplified positioning */
+/* Typography */
 .text-layer {
-    position: relative;
-    z-index: 5;
-    margin-top: 10px;
+    text-shadow: 0 4px 10px rgba(0, 0, 0, 0.8);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.welcome-script {
-    font-family: var(--font-hand);
-    font-size: 2.5rem;
-    color: #444;
-    transform: rotate(-2deg);
-    display: block;
-    margin: 0 0 10px 0;
-    line-height: 1.4;
+.brand-logo-text {
+    max-width: 90%;
+    width: 500px;
+    height: auto;
+    margin-bottom: 0.5rem;
+    filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.8));
 }
 
-.brand-title {
+.anniversary-badge {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: 1rem;
+    margin: 0.5rem 0;
+}
+
+.anniversary-badge .number {
+    font-family: 'Oswald', sans-serif;
+    font-size: 4rem;
+    font-weight: 700;
+    color: var(--color-sun-yellow);
+    /* Solar Yellow Pop */
+    line-height: 1;
+}
+
+.anniversary-badge .text {
     font-family: var(--font-main);
-    font-size: clamp(2rem, 5vw, 3rem);
+    font-size: 1.8rem;
+    font-weight: 300;
     text-transform: uppercase;
-    font-weight: 800;
-    color: #222;
-    margin: 0 0 10px 0;
+    color: #eee;
     letter-spacing: 1px;
 }
 
 .hero-subtitle {
-    font-size: 1.2rem;
-    color: #666;
-    max-width: 500px;
-    margin: 0 auto 2rem auto;
+    font-size: 1.5rem;
+    color: #ddd;
+    font-weight: 400;
+    letter-spacing: 4px;
+    margin: 0;
+    display: inline-block;
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    padding-top: 1rem;
+    margin-top: 1rem;
 }
 
-/* CTA */
+/* CTA Button */
+/* CTA Button */
 .primary-btn {
-    background: var(--color-gradient-solar);
+    background: #007ac0;
+    /* Brand Blue */
     color: white;
     padding: 1rem 3rem;
-    border-radius: 50px;
     font-weight: 700;
-    font-size: 1.1rem;
-    letter-spacing: 1px;
-    cursor: pointer;
-    box-shadow: 0 5px 15px rgba(227, 6, 19, 0.2);
-    /* Red shadow */
-    transition: transform 0.2s ease;
-    display: inline-block;
-    text-decoration: none;
+    font-family: var(--font-main);
     text-transform: uppercase;
-    border: none;
+    letter-spacing: 1px;
+    font-size: 1.1rem;
+    border-radius: 50px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 75, 120, 0.4);
+    /* Blue shadow */
+    margin-top: 2rem;
+    display: inline-block;
+    border: 2px solid #007ac0;
 }
 
-.primary-btn:active {
-    transform: scale(0.98);
+.primary-btn:hover {
+    transform: translateY(-3px);
+    background: white;
+    color: #007ac0;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
 }
 
-/* Wave */
-.hero-wave {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    line-height: 0;
-    z-index: 2;
-}
-
-/* No CSS Animations on mobile to prevent reloading feel */
+/* Animations */
 .animate-up {
-    opacity: 1;
-    transform: none;
-    animation: none;
+    animation: fadeInUp 1s ease forwards;
 }
 
-/* Responsive adjustments */
-@media (min-width: 769px) {
+.delay-1 {
+    animation-delay: 0.3s;
+}
 
-    /* Only animate on desktop */
-    .animate-up {
+.delay-2 {
+    animation-delay: 0.6s;
+}
+
+@keyframes fadeInUp {
+    from {
         opacity: 0;
-        transform: translateY(20px);
-        animation: fadeUp 0.8s forwards;
+        transform: translateY(30px);
     }
 
-    .delay-1 {
-        animation-delay: 0.2s;
-    }
-
-    .delay-2 {
-        animation-delay: 0.4s;
-    }
-}
-
-@keyframes fadeUp {
     to {
         opacity: 1;
         transform: translateY(0);
     }
 }
 
+/* Responsive */
 @media (max-width: 768px) {
-    .huge-50 {
-        font-size: 8rem;
-        /* Fixed readable size on mobile */
+    .hero-logo-center img {
+        height: 100px;
+        /* Mobile Size */
     }
 
-    .ring-1,
-    .ring-2,
-    .ring-3 {
-        width: 150vw;
-        /* Push rings further out */
-        height: 150vw;
+    .brand-title {
+        font-size: 2rem;
     }
 
-    .hero-container {
-        padding-top: 40px;
-        min-height: auto;
-        /* Allow natural height */
-        height: 100vh;
-        /* Fill screen */
+    .anniversary-badge .number {
+        font-size: 3rem;
+    }
+
+    .anniversary-badge .text {
+        font-size: 1.2rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
     }
 }

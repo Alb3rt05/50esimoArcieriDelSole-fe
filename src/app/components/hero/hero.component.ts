@@ -11,10 +11,8 @@ import { CommonModule } from '@angular/common';
 export class HeroComponent implements OnInit, OnDestroy {
 
   backgroundImages: string[] = [
-    'assets/images/hero-1.jpg',
-    'assets/images/hero-2.jpg',
-    'assets/images/hero-3.jpg'
-    // Add more paths here
+    'assets/images/hero/GLA_1364.jpg',
+    'assets/images/hero/hero-group.jpg'
   ];
 
   currentImageIndex = 0;
