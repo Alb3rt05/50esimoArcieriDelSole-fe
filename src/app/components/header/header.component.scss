@@ -175,6 +175,8 @@ nav {
 
 /* Responsive: Mobile (max-width: 768px) */
 /* "Mobile un hamburger menù con il logo a sinistra" */
+/* Responsive: Mobile (max-width: 768px) */
+/* "Mobile un hamburger menù con il logo a sinistra" */
 @media (max-width: 768px) {
     .hamburger {
         display: flex;
@@ -186,6 +188,42 @@ nav {
 
     .mobile-only {
         display: block;
+    }
+
+    /* Mobile Social Icons (Header Bar) */
+    .mobile-socials {
+        display: flex;
+        gap: 1.2rem;
+        align-items: center;
+        margin-right: 1.5rem;
+        /* Space between icons and hamburger */
+    }
+
+    .mobile-socials a {
+        color: white;
+        transition: color 0.3s ease;
+        display: flex;
+        align-items: center;
+    }
+
+    .mobile-socials a:hover {
+        color: var(--color-sun-yellow);
+    }
+
+    /* Adjust Logo on Mobile Scroll to prevent clipping/jumping */
+    .logo-img img {
+        height: 55px;
+        /* Slightly smaller starting size on mobile */
+    }
+
+    header.scrolled .logo-img img {
+        height: 45px;
+        /* Shrink cleanly on scroll */
+    }
+
+    /* Hide social icons inside the Nav since they are in the header */
+    .social-li {
+        display: none;
     }
 
     /* Keep generic logic: nav overlay needs to be handled. 
