@@ -18,3 +18,22 @@ p {
     color: #bbb;
     font-size: 0.9rem;
 }
+
+.footer-socials {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.footer-socials a {
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.footer-socials a:hover {
+    color: #ffcc00;
+    /* Solar Yellow manually since var might not be available here depending on scope, but usually global. Let's use var just in case */
+    color: var(--color-sun-yellow, #ffcc00);
+    transform: translateY(-2px);
+}

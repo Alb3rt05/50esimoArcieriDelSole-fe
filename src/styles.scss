@@ -1,19 +1,31 @@
 /* Global Styles */
 :root {
   --color-primary: #FF8800;
-  /* Sole */
+  /* Solar Orange - Primary */
   --color-secondary: #E30613;
-  /* Freccia */
+  /* Brand Red - Secondary */
   --color-sun-yellow: #FFCC00;
-  /* Giallo Sole - Brand Color */
+  /* Giallo Sole */
+
+  /* Blue Theme Variables (For Header & Accents) */
+  --color-brand-blue: #007ac0;
+  --color-header-bg: #007ac0;
+  /* Matches Arcieridelsole_azzurro_stampa.svg background */
+
   --color-text: #707070;
-  /* Grigio Antracite */
+  --color-text-light: #ffffff;
+
   --color-bg: #ffffff;
   --color-light-gray: #f5f5f5;
   --font-main: 'Outfit', sans-serif;
   --font-hand: 'Caveat', cursive;
-  /* New variable for creative text */
+
+  /* Gradients */
   --color-gradient-solar: linear-gradient(135deg, #FFCC00 0%, #FF8800 50%, #E30613 100%);
+  --color-gradient-blue: linear-gradient(135deg, #77b3e2 0%, #007ac0 60%, #005a8e 100%);
+
+  /* Primary gradient used globally - Reverted to Solar */
+  --color-gradient-brand: var(--color-gradient-solar);
 }
 
 /* Solar Text Gradient Utility */

@@ -43,6 +43,8 @@
 .ring-2 {
     width: 90vw;
     height: 90vw;
+    border-color: rgba(255, 136, 0, 0.08);
+    /* Revert to solar hint */
 }
 
 .ring-3 {
@@ -78,12 +80,13 @@
     font-weight: 900;
     font-family: var(--font-main);
     /* Simple solid gradient */
-    background: linear-gradient(135deg, #FF8800 0%, #E30613 100%);
+    background: var(--color-gradient-solar);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
     display: inline-block;
     filter: drop-shadow(0 4px 10px rgba(227, 6, 19, 0.1));
-    /* Reduced shadow */
+    /* Red shadow */
 }
 
 .years-badge {
@@ -139,7 +142,7 @@
 
 /* CTA */
 .primary-btn {
-    background: linear-gradient(90deg, #FF8800, #E30613);
+    background: var(--color-gradient-solar);
     color: white;
     padding: 1rem 3rem;
     border-radius: 50px;
@@ -148,6 +151,7 @@
     letter-spacing: 1px;
     cursor: pointer;
     box-shadow: 0 5px 15px rgba(227, 6, 19, 0.2);
+    /* Red shadow */
     transition: transform 0.2s ease;
     display: inline-block;
     text-decoration: none;
