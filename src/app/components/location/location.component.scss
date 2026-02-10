@@ -15,7 +15,15 @@
     /* Helps with bounding box */
 }
 
+.material-symbols-outlined {
+    color: var(--color-text);
+    font-size: 2rem;
+}
 
+.sub-note {
+    color: var(--color-text);
+    font-size: 1rem;
+}
 
 /* Polaraiod Map Style */
 .map-polaroid {
@@ -30,6 +38,18 @@
     max-width: 550px;
     position: relative;
     border: 1px solid #eee;
+}
+
+.icon-park {
+    color: var(--color-park);
+}
+
+.icon-structure {
+    color: var(--color-structure);
+}
+
+.icon-refreshment {
+    color: var(--color-refreshment);
 }
 
 .map-polaroid:hover {
