@@ -8,12 +8,14 @@
 }
 
 .hand-font {
-    font-family: var(--font-hand);
+
     line-height: 1.8;
     /* Generous height */
     display: inline-block;
     /* Helps with bounding box */
 }
+
+
 
 /* Polaraiod Map Style */
 .map-polaroid {

@@ -67,7 +67,7 @@ label {
     font-weight: 600;
     margin-bottom: 0.3rem;
     color: var(--color-text);
-    font-family: var(--font-hand);
+
     /* Handwritten labels */
     font-size: 1.3rem;
     line-height: 1.6;
@@ -101,7 +101,7 @@ input:focus {
 .radio-group .radios {
     display: flex;
     gap: 2rem;
-    font-family: var(--font-hand);
+
     font-size: 1.4rem;
     line-height: 1.6;
     padding: 5px 0;
@@ -140,7 +140,7 @@ input:focus {
     border-radius: 8px;
     margin-bottom: 1rem;
     font-weight: 600;
-    font-family: var(--font-hand);
+
     font-size: 1.3rem;
     line-height: 1.5;
 }
