@@ -1,76 +1,103 @@
-<section class="container mt-2 mb-2 relative-container">
-    <div class="text-center mb-2 intro-program">
-        <h2 class="text-solar creative-title">Il Percorso della Giornata</h2>
-        <div class="program-details">
-            <span class="badge-solar">Domenica XX Mese 2026</span>
-            <span class="badge-solar">15:00 - 18:00</span>
+<section class="program-magazine relative-container">
+
+    <!-- Intro Header -->
+    <div class="intro-header text-center">
+        <h2 class="section-title text-solar creative-title">Il Percorso della Giornata</h2>
+        <div class="date-pills">
+            <span class="pill">
+                <span class="material-symbols-outlined">
+                    calendar_month
+                </span>
+                Domenica XX Mese 2026</span>
+            <span class="pill">
+                <span class="material-symbols-outlined">
+                    schedule
+                </span>
+                15:00 - 18:00</span>
         </div>
-        <p class="location-hint">(segui il percorso...)</p>
     </div>
 
-    <!-- Asymmetric Rhythm Grid (1 - 2 - 1) -->
-    <div class="rhythm-grid">
-
-        <!-- ROW 1: FULL WIDTH -->
-        <div class="rhythm-card full-width animate-up delay-1">
-            <div class="card-inner">
-                <div class="icon-circle">🥂</div>
-                <div class="content-text">
-                    <span class="step-label">INIZIO ORE 15:00</span>
-                    <h3 class="hand-font">Sala Rinfresco</h3>
-                    <p>Un buffet con tante sfiziosità e bollicine per iniziare alla grande.</p>
-                    <div class="sub-content">
-                        <strong>Angolo Accoglienza:</strong> Qui ti chiederemo di registrarti. Ti verrà consegnata la
-                        sacca con i gadget!
-                    </div>
-                </div>
+    <!-- ROW 1: Rinfresco (Image Left, Text Right) -->
+    <div class="mag-row">
+        <div class="mag-image-col">
+            <div class="image-wrapper tilt-left">
+                <img src="https://placehold.co/800x600/eee/31343C?text=FOTO+DA+CARICARE" alt="Sala Rinfresco">
+                <div class="solar-accent-box"></div>
             </div>
         </div>
-
-        <!-- ROW 2: SPLIT (Action Phase) -->
-        <div class="split-row">
-            <div class="rhythm-card half-width highlight animate-up delay-2">
-                <div class="card-inner">
-                    <div class="icon-circle">🏹</div>
-                    <div class="content-text">
-                        <span class="step-label">LA SFIDA</span>
-                        <h3 class="hand-font">La Gara</h3>
-                        <p><strong>SI! Hai capito bene!</strong></p>
-                        <p>5 volèe a 15 metri. Porta il tuo arco o usa i nostri! <br><span class="fun-note">Tieni la
-                                targa!</span></p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="rhythm-card half-width animate-up delay-3">
-                <div class="card-inner">
-                    <div class="icon-circle">🎯</div>
-                    <div class="content-text">
-                        <span class="step-label">PER I CURIOSI</span>
-                        <h3 class="hand-font">Prova di Tiro</h3>
-                        <p>Un bersaglio a 5 metri per chi vuole provare a tirare le prime frecce con i nostri
-                            istruttori!</p>
-                    </div>
-                </div>
+        <div class="mag-text-col">
+            <div class="step-marker">Ore 15:00</div>
+            <h3 class="step-title">Sala Rinfresco</h3>
+            <p class="step-desc">Un buffet con tante sfiziosità e bollicine per iniziare alla grande.</p>
+            <div class="info-highlight">
+                <span class="material-symbols-outlined icon">celebration</span>
+                <p><strong>Angolo Accoglienza:</strong> Qui ti chiederemo di registrarti. Ti verrà consegnata la sacca
+                    con i gadget!</p>
             </div>
         </div>
-
-        <!-- ROW 3: FULL WIDTH -->
-        <div class="rhythm-card full-width last-step animate-up delay-4">
-            <div class="card-inner">
-                <div class="icon-circle">🏆</div>
-                <div class="content-text">
-                    <span class="step-label">GRAN FINALE</span>
-                    <h3 class="hand-font">Premiazioni</h3>
-                    <p>Foto e Riconoscimenti per tutti gli atleti!</p>
-                </div>
-            </div>
-        </div>
-
     </div>
 
-    <div class="text-center mt-2 final-message">
-        <h2 class="text-solar creative-title" style="transform: rotate(-2deg);">NON VEDIAMO L’ORA DI RIVEDERCI TUTTI
-            QUANTI INSIEME!</h2>
+    <!-- ROW 2: La Gara (Text Left, Image Right) -->
+    <div class="mag-row reverse">
+        <div class="mag-text-col">
+            <div class="step-marker">La Sfida</div>
+            <h3 class="step-title">La Gara</h3>
+            <p class="step-desc"><strong>SI! Hai capito bene!</strong><br>5 volèe a 15 metri. Porta il tuo arco o usa i
+                nostri! <br><span class="highlight-text">Tieni la targa!</span></p>
+            <div class="info-highlight">
+                <span class="material-symbols-outlined icon">track_changes</span>
+                <p>Mettiti alla prova sulla linea di tiro ufficiale!</p>
+            </div>
+        </div>
+        <div class="mag-image-col">
+            <div class="image-wrapper tilt-right">
+                <img src="https://placehold.co/800x600/eee/31343C?text=FOTO+DA+CARICARE" alt="Tiro con l'Arco">
+                <div class="solar-accent-box"></div>
+            </div>
+        </div>
     </div>
+
+    <!-- ROW 3: Prova (Image Left, Text Right) -->
+    <div class="mag-row">
+        <div class="mag-image-col">
+            <div class="image-wrapper tilt-left">
+                <img src="https://placehold.co/800x600/eee/31343C?text=FOTO+DA+CARICARE" alt="Prova di Tiro">
+                <div class="solar-accent-box"></div>
+            </div>
+        </div>
+        <div class="mag-text-col">
+            <div class="step-marker">Per i Curiosi</div>
+            <h3 class="step-title">Prova di Tiro</h3>
+            <p class="step-desc">Non hai mai tirato? Nessun problema!</p>
+            <div class="info-highlight">
+                <span class="material-symbols-outlined icon">adjust</span>
+                <p>Un bersaglio a 5 metri per chi vuole provare a scoccare le prime frecce con i nostri istruttori!</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ROW 4: Premiazioni (Text Left, Image Right) -->
+    <div class="mag-row reverse">
+        <div class="mag-text-col">
+            <div class="step-marker">Gran Finale</div>
+            <h3 class="step-title">Premiazioni</h3>
+            <p class="step-desc">Celebriamo insieme i risultati della giornata.</p>
+            <div class="info-highlight">
+                <span class="material-symbols-outlined icon">emoji_events</span>
+                <p>Foto di rito e Riconoscimenti speciali per tutti gli atleti partecipanti!</p>
+            </div>
+        </div>
+        <div class="mag-image-col">
+            <div class="image-wrapper tilt-right">
+                <img src="https://placehold.co/800x600/eee/31343C?text=FOTO+DA+CARICARE" alt="Premiazioni">
+                <div class="solar-accent-box"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Final Message -->
+    <div class="final-message text-center">
+        <h2 class="creative-footer text-solar creative-title">NON VEDIAMO L’ORA DI RIVEDERCI TUTTI QUANTI INSIEME!</h2>
+    </div>
+
 </section>
