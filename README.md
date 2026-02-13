@@ -1,27 +1,56 @@
-# ArcieriDelSole50th
+# 🏹 50° Anniversario Arcieri del Sole (1976-2026)
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.17.
+Questo progetto è il sito web celebrativo per il **50° Anniversario della Compagnia Arcieri del Sole**, progettato per raccontare la storia, gli eventi e i successi della società dal 1976 al 2026.
 
-## Development server
+## ✨ Caratteristiche Principali
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+*   **Hero Section Immersiva**: Slideshow emozionale che ripercorre la storia della compagnia dalle origini ad oggi.
+*   **Programma Eventi**: Timeline dettagliata degli eventi celebrativi previsti per l'anno.
+*   **Gallery Storica**: Una raccolta curata di immagini che documentano 50 anni di attività sportiva e sociale.
+*   **Design Responsive**: Ottimizzato per la visualizzazione su desktop, tablet e mobile.
+*   **Tema "Solar"**: Design moderno con richiami ai colori sociali (Giallo Sole, Blu) e dettagli animati.
 
-## Code scaffolding
+## 🛠️ Tecnologie Utilizzate
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+*   **Framework**: [Angular](https://angular.io/) (v16+)
+*   **Linguaggio**: TypeScript, SCSS
+*   **Design**: Custom CSS con focus su animazioni e layout responsive.
+*   **Icone**: SVG custom e FontAwesome (se in uso).
 
-## Build
+## 🚀 Installazione e Avvio
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Per eseguire il progetto in locale:
 
-## Running unit tests
+1.  **Clona il repository**:
+    ```bash
+    git clone https://github.com/Alb3rt05/50esimoArcieriDelSole-fe.git
+    cd 50esimoArcieriDelSole-fe
+    ```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+2.  **Installa le dipendenze**:
+    ```bash
+    npm install
+    ```
 
-## Running end-to-end tests
+3.  **Avvia il server di sviluppo**:
+    ```bash
+    ng serve
+    ```
+    Apri il browser su `http://localhost:4200/`.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## 📦 Build per Produzione
 
-## Further help
+Per creare la build ottimizzata per la produzione:
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+```bash
+ng build
+```
+I file compilati saranno salvati nella cartella `dist/`.
+
+## 👤 Autore
+
+Sviluppato con ❤️ da **[Alb3rt05](https://github.com/Alb3rt05)**.
+
+## 📄 Licenza
+
+Questo progetto è distribuito sotto licenza [MIT](LICENSE) (o specificare altra licenza proprietaria se necessario).
