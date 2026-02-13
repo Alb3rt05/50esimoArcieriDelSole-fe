@@ -1,0 +1,138 @@
+/* Global Styles */
+:root {
+  --color-primary: #FF8800;
+  /* Solar Orange - Primary */
+  --color-secondary: #E30613;
+  /* Brand Red - Secondary */
+  --color-sun-yellow: #FFCC00;
+  /* Giallo Sole */
+
+  /* Blue Theme Variables (For Header & Accents) */
+  --color-brand-blue: #007ac0;
+  --color-header-bg: #007ac0;
+  /* Matches Arcieridelsole_azzurro_stampa.svg background */
+
+  --color-text: #707070;
+  --color-text-light: #ffffff;
+
+  --color-bg: #ffffff;
+  --color-light-gray: #f5f5f5;
+  --font-main: 'Outfit', sans-serif;
+  --font-hand: 'Outfit', sans-serif;
+  --color-park: #008BFF;
+  --color-structure: #E67E22;
+  --color-refreshment: #9E3B3B;
+  /* Gradients */
+  --color-gradient-solar: linear-gradient(135deg, #FFCC00 0%, #FF8800 50%, #E30613 100%);
+  --color-gradient-blue: linear-gradient(135deg, #77b3e2 0%, #007ac0 60%, #005a8e 100%);
+
+  /* Primary gradient used globally - Reverted to Solar */
+  --color-gradient-brand: var(--color-gradient-solar);
+}
+
+/* Solar Text Gradient Utility */
+.text-solar {
+  background: var(--color-gradient-solar);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: inline-block;
+}
+
+/* Responsive Creative Title shared across sections */
+.creative-title {
+  font-family: var(--font-hand);
+  font-size: 3rem;
+  line-height: 1.6;
+  padding: 0.3em 0.1em;
+  /* Significant padding around glyphs */
+  margin: -0.1em 0;
+  /* Compensate for padding */
+  display: inline-block;
+  overflow: visible;
+  /* Ensure background covers the padding area */
+  background-origin: border-box;
+  background-size: cover;
+}
+
+@media (max-width: 768px) {
+  .creative-title {
+    font-size: 2.2rem !important;
+    line-height: 1.4;
+    padding: 10px;
+    margin: 0;
+  }
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-main);
+  color: var(--color-text);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--color-primary);
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.3s ease;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Utilities */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.mt-1 {
+  margin-top: 1rem;
+}
+
+.mt-2 {
+  margin-top: 2rem;
+}
+
+.mb-1 {
+  margin-bottom: 1rem;
+}
+
+.mb-2 {
+  margin-bottom: 2rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.75rem;
+  }
+}

@@ -1,0 +1,220 @@
+/* Hero Section - Image Carousel + Central Logo */
+.hero-container {
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    background: #050505;
+    /* Deep Black fallback */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 20px;
+    overflow: hidden;
+    color: white;
+}
+
+/* Background Slideshow */
+.bg-slideshow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.slide-item {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out;
+    filter: brightness(0.9);
+}
+
+.slide-item.active {
+    opacity: 1;
+}
+
+/* Dark Overlay for Playability */
+.white-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    /* Flat dark overlay */
+    z-index: 1;
+}
+
+/* Content */
+.content {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    max-width: 1000px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-composition {
+    position: relative;
+    padding: 2rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+/* Central Logo */
+.hero-logo-center img {
+    height: 150px;
+    /* Desktop Size */
+    width: auto;
+    filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.5));
+    transition: transform 0.3s ease;
+}
+
+.hero-logo-center:hover img {
+    transform: scale(1.05);
+}
+
+/* Typography */
+.text-layer {
+    text-shadow: 0 4px 10px rgba(0, 0, 0, 0.8);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.brand-logo-text {
+    max-width: 90%;
+    width: 500px;
+    height: auto;
+    margin-bottom: 0.5rem;
+    filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.8));
+}
+
+.anniversary-badge {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: 1rem;
+    margin: 0.5rem 0;
+}
+
+.anniversary-badge .number {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--color-sun-yellow);
+    /* Solar Yellow Pop */
+    line-height: 1;
+}
+
+.anniversary-badge .text {
+    font-family: var(--font-main);
+    font-size: 1.8rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    color: #eee;
+    letter-spacing: 1px;
+}
+
+.hero-subtitle {
+    font-size: 1.5rem;
+    color: #ddd;
+    font-weight: 400;
+    letter-spacing: 4px;
+    margin: 0;
+    display: inline-block;
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    padding-top: 1rem;
+    margin-top: 1rem;
+}
+
+/* CTA Button */
+/* CTA Button */
+.primary-btn {
+    background: #007ac0;
+    /* Brand Blue */
+    color: white;
+    padding: 1rem 3rem;
+    font-weight: 700;
+    font-family: var(--font-main);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 1.1rem;
+    border-radius: 50px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 75, 120, 0.4);
+    /* Blue shadow */
+    margin-top: 2rem;
+    display: inline-block;
+    border: 2px solid #007ac0;
+}
+
+.primary-btn:hover {
+    transform: translateY(-3px);
+    background: white;
+    color: #007ac0;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+}
+
+/* Animations */
+.animate-up {
+    animation: fadeInUp 1s ease forwards;
+}
+
+.delay-1 {
+    animation-delay: 0.3s;
+}
+
+.delay-2 {
+    animation-delay: 0.6s;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero-logo-center img {
+        height: 100px;
+        /* Mobile Size */
+    }
+
+    .brand-title {
+        font-size: 2rem;
+    }
+
+    .anniversary-badge .number {
+        font-size: 3rem;
+    }
+
+    .anniversary-badge .text {
+        font-size: 1.2rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+}

@@ -1,0 +1,285 @@
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+    padding: 0 40px;
+    /* More padding for desktop */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    transition: all 0.4s ease;
+    background: var(--color-header-bg);
+    /* Blue Background */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+header.scrolled .header-content {
+    background: rgba(0, 122, 192, 0.95);
+    /* Slightly transparent Blue */
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    height: 70px;
+}
+
+/* Logo Section */
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logo-img img {
+    height: 65px;
+    /* Increased size */
+    width: auto;
+    transition: transform 0.3s ease;
+}
+
+.logo-text-img svg {
+    height: 35px;
+    /* Increased size */
+    width: auto;
+    margin-top: 5px;
+    /* visual alignment */
+}
+
+/* Hover effect on logo */
+.logo-container:hover .logo-img img {
+    transform: rotate(-5deg) scale(1.05);
+}
+
+/* Navigation */
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+    // align-items: center;
+}
+
+nav a {
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--color-text-light);
+    /* White text */
+    font-size: 1rem;
+    position: relative;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+}
+
+nav a:not(.btn-partecipa)::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background-color: var(--color-secondary);
+    /* Solar Yellow underline for contrast */
+    transition: width 0.3s ease;
+}
+
+/* Remove underline for social icons */
+.social-li a::after {
+    display: none !important;
+}
+
+nav a:not(.btn-partecipa):hover::after {
+    width: 100%;
+}
+
+nav a:not(.btn-partecipa):hover {
+    color: var(--color-sun-yellow);
+    /* Solar Yellow hover */
+}
+
+.btn-partecipa {
+    background: white;
+    /* White button on blue */
+    color: var(--color-brand-blue) !important;
+    padding: 0.6rem 1.8rem;
+    border-radius: 50px;
+    font-weight: 700;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.btn-partecipa:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    background: var(--color-sun-yellow);
+    color: white !important;
+}
+
+/* Right Side Logo (Corporate) */
+.logo-societario {
+    display: flex;
+    align-items: center;
+}
+
+.logo-societario img {
+    height: 60px;
+    width: auto;
+    transition: transform 0.3s ease;
+    filter: brightness(0) invert(1) drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+/* Center Nav on Desktop */
+nav {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.logo-societario:hover img {
+    transform: scale(1.05);
+}
+
+/* Utilities for Responsive Display */
+.mobile-only {
+    display: none;
+}
+
+.desktop-only {
+    display: block;
+}
+
+/* Responsive: Tablet (max-width: 1024px) */
+/* "Rimpicciolendolo più piccolo modalità tablet la scritta sparisce" */
+@media (max-width: 1024px) {
+    .logo-text-img {
+        display: none;
+        /* Text disappears */
+    }
+
+    .logo-societario {
+        display: none;
+        /* Hide corporate logo on tablet/mobile if space is tight */
+    }
+
+    .header-content {
+        padding: 0 20px;
+    }
+
+    nav ul {
+        gap: 1.5rem;
+    }
+}
+
+/* Responsive: Mobile (max-width: 768px) */
+/* "Mobile un hamburger menù con il logo a sinistra" */
+/* Responsive: Mobile (max-width: 768px) */
+/* "Mobile un hamburger menù con il logo a sinistra" */
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
+
+    .desktop-only {
+        display: none;
+    }
+
+    .mobile-only {
+        display: block;
+    }
+
+    /* Mobile Social Icons (Header Bar) */
+    .mobile-socials {
+        display: flex;
+        gap: 1.2rem;
+        align-items: center;
+        margin-right: 1.5rem;
+        /* Space between icons and hamburger */
+    }
+
+    .mobile-socials a {
+        color: white;
+        transition: color 0.3s ease;
+        display: flex;
+        align-items: center;
+    }
+
+    .mobile-socials a:hover {
+        color: var(--color-sun-yellow);
+    }
+
+    /* Adjust Logo on Mobile Scroll to prevent clipping/jumping */
+    .logo-img img {
+        height: 55px;
+        /* Slightly smaller starting size on mobile */
+    }
+
+    header.scrolled .logo-img img {
+        height: 45px;
+        /* Shrink cleanly on scroll */
+    }
+
+    /* Hide social icons inside the Nav since they are in the header */
+    .social-li {
+        display: none;
+    }
+
+    /* Keep generic logic: nav overlay needs to be handled. 
+       If header is blue, mobile menu should probably match or be white.
+       Let's make it Blue for consistency.
+    */
+    nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: var(--color-brand-blue);
+        /* Blue background */
+        backdrop-filter: blur(10px);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.4s ease;
+        transform: none;
+        /* Reset desktop centering */
+    }
+
+    nav.active {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    nav a {
+        font-size: 1.5rem;
+        color: white;
+    }
+}
+
+/* Hamburger Styles */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 6px;
+    z-index: 1001;
+}
+
+.hamburger span {
+    width: 30px;
+    height: 3px;
+    background-color: white;
+    /* White hamburger */
+    border-radius: 2px;
+    transition: 0.3s;
+}

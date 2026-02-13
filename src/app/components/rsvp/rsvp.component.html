@@ -1,0 +1,79 @@
+<section class="container mt-2 mb-2 d-flex-center relative-container">
+  <div class="rsvp-section paper-effect">
+    <div class="tape-large"></div>
+    <div class="text-center mb-1">
+      <h2 class="text-solar creative-title">Aiutaci ad organizzare al meglio l'evento</h2>
+      <p style="font-size: 1.2rem; font-weight: 700; color: var(--color-secondary);">ENTRO IL 15 MARZO</p>
+    </div>
+
+    <!-- Form content logic remains the same, just updating headers above -->
+    <form class="rsvp-form" [formGroup]="rsvpForm" (ngSubmit)="onSubmit()">
+      <!-- ... (keeping existing form logic, just wrapper changed) ... -->
+
+      <!-- Re-implementing form structure to ensure it works with new wrapper text -->
+      <div class="form-row">
+        <div class="form-group">
+          <label for="nome">Nome *</label>
+          <input id="nome" type="text" formControlName="nome" placeholder="Il tuo nome">
+        </div>
+        <div class="form-group">
+          <label for="cognome">Cognome *</label>
+          <input id="cognome" type="text" formControlName="cognome" placeholder="Il tuo cognome">
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="email">Email *</label>
+          <input id="email" type="email" formControlName="email" placeholder="Per inviarti le foto dell'evento">
+          <small>Se ci lasci una mail ti invieremo tutte le foto dell'evento!</small>
+        </div>
+        <div class="form-group">
+          <label for="cellulare">Cellulare *</label>
+          <input id="cellulare" type="tel" formControlName="cellulare" placeholder="Per comunicazioni urgenti">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Conferma la tua presenza *</label>
+        <div class="radio-group">
+          <div class="radios">
+            <label><input type="radio" formControlName="presenza" value="SI"> CI SARÒ</label>
+            <label><input type="radio" formControlName="presenza" value="NO"> NON CI SARÒ</label>
+          </div>
+        </div>
+      </div>
+
+      <!-- Conditional fields logic handled by component.ts (ngIf defaults to reactive form checks) -->
+      <div class="form-row" *ngIf="rsvpForm.get('presenza')?.value === 'SI'">
+        <div class="form-group">
+          <label>Verrai accompagnato? (Adulti)</label>
+          <input type="number" formControlName="adulti" min="0">
+        </div>
+        <div class="form-group">
+          <label>Verrai accompagnato? (Bambini)</label>
+          <input type="number" formControlName="bambini" min="0">
+        </div>
+      </div>
+
+      <div class="form-group checkbox-group">
+        <label>
+          <input type="checkbox" formControlName="privacy">
+          Acconsento al trattamento dei dati per la gestione dell'evento.
+        </label>
+      </div>
+
+      <button type="submit" class="btn-submit" [disabled]="rsvpForm.invalid || isSubmitting">
+        {{ isSubmitting ? 'Invio in corso...' : 'INVIA CONFERMA' }}
+      </button>
+
+      <div *ngIf="submitStatus === 'success'" class="alert alert-success mt-1">
+        Grazie! La tua risposta è stata registrata.
+      </div>
+      <div *ngIf="submitStatus === 'error'" class="alert alert-danger mt-1">
+        C'è stato un errore. Riprova o contattaci.
+      </div>
+
+    </form>
+  </div>
+</section>

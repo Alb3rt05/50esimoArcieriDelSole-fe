@@ -1,0 +1,63 @@
+footer {
+    margin-top: 4rem;
+    background: #333;
+    color: white;
+    padding-bottom: 2rem;
+}
+
+.tricolor-bar {
+    height: 5px;
+    background: linear-gradient(to right, #009246 33%, #F1F2F1 33%, #F1F2F1 66%, #CE2B37 66%);
+}
+
+.footer-content {
+    padding-top: 2rem;
+}
+
+p {
+    color: #bbb;
+    font-size: 0.9rem;
+}
+
+.footer-socials {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.footer-socials a {
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.footer-socials a:hover {
+    color: #ffcc00;
+    /* Solar Yellow manually since var might not be available here depending on scope, but usually global. Let's use var just in case */
+    color: var(--color-sun-yellow, #ffcc00);
+    transform: translateY(-2px);
+}
+
+.credits {
+    margin-top: 1.5rem;
+    font-size: 1rem;
+    opacity: 1;
+    color: white;
+    font-family: var(--font-main);
+    /* Ensure it looks official */
+    letter-spacing: 0.5px;
+
+    a {
+        color: var(--color-sun-yellow, #ffcc00);
+        text-decoration: none;
+        font-weight: 700;
+        transition: all 0.3s ease;
+        padding-bottom: 2px;
+        border-bottom: 1px solid transparent;
+
+        &:hover {
+            border-bottom-color: var(--color-secondary);
+            filter: brightness(1.2);
+        }
+    }
+}
