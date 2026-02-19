@@ -52,6 +52,11 @@
     color: var(--color-refreshment);
 }
 
+.icon {
+    width: 2rem;
+    height: 2rem;
+}
+
 .map-polaroid:hover {
     transform: rotate(0deg) scale(1.02);
     z-index: 10;
