@@ -1,0 +1,235 @@
+.thanks-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 500px;
+  position: relative;
+  z-index: 5;
+}
+
+.thanks-section {
+  background: white;
+  padding: 3rem 2rem;
+  width: 100%;
+  max-width: 800px;
+  position: relative;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  transform: rotate(-1deg);
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: rotate(0deg);
+  }
+}
+
+.paper-effect {
+  background: #fdfdfd;
+  background-image: linear-gradient(#e1e1e1 1px, transparent 1px);
+  background-size: 100% 2.5rem;
+}
+
+.tape-large {
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  width: 150px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(2px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  transform: translateX(-50%) rotate(2deg);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.solar-icon {
+  font-size: 3rem;
+  filter: drop-shadow(0 0 10px var(--color-sun-yellow, #ffd700));
+}
+
+.creative-title {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  letter-spacing: 2px;
+  background: linear-gradient(45deg, #f39c12, #e67e22);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+.message-body {
+  font-family: var(--font-main, sans-serif);
+  color: #333;
+  line-height: 1.6;
+
+  .lead {
+    font-size: 1.3rem;
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+  }
+}
+
+.divider {
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(0, 0, 0, 0.1), transparent);
+  margin: 2rem 0;
+}
+
+.hand-font {
+  font-family: 'Indie Flower', 'Dancing Script', cursive;
+  font-size: 1.8rem;
+  color: var(--color-primary, #007ac0);
+}
+
+/* Photo Highlights Strip */
+.highlights-strip-container {
+  width: 100%;
+  overflow: hidden;
+  padding: 2rem 0;
+  position: relative;
+  cursor: grab;
+
+  &:active {
+    cursor: grabbing;
+  }
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 100px;
+    height: 100%;
+    z-index: 2;
+    pointer-events: none;
+  }
+
+  &::before {
+    left: 0;
+    background: linear-gradient(to right, white, transparent);
+  }
+
+  &::after {
+    right: 0;
+    background: linear-gradient(to left, white, transparent);
+  }
+}
+
+.highlights-track {
+  display: flex;
+  gap: 3rem;
+  width: max-content;
+  animation: scroll-infinitamente 40s linear infinite;
+
+  &:hover {
+    animation-play-state: paused;
+  }
+}
+
+.polaroid-item {
+  flex: 0 0 250px;
+  perspective: 1000px;
+
+  &:nth-child(even) .polaroid-inner {
+    transform: rotate(2deg);
+  }
+
+  &:nth-child(odd) .polaroid-inner {
+    transform: rotate(-3deg);
+  }
+}
+
+.polaroid-inner {
+  background: white;
+  padding: 1rem;
+  /* Uniforme senza didascalia */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  border: 1px solid #eee;
+
+  img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    display: block;
+  }
+
+  &:hover {
+    transform: scale(1.05) rotate(0deg) !important;
+    z-index: 10;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  }
+}
+
+@keyframes scroll-infinitamente {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(calc(-50% - 1.5rem));
+  }
+}
+
+.album-cta {
+  p {
+    color: #666;
+  }
+}
+
+.pulse-button {
+  display: inline-block;
+  background: #007ac0;
+  color: white;
+  padding: 1rem 2.5rem;
+  border-radius: 50px;
+  font-weight: 700;
+  text-decoration: none;
+  font-size: 1.1rem;
+  box-shadow: 0 10px 20px rgba(0, 122, 192, 0.3);
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  border: none;
+  cursor: pointer;
+
+  &:hover {
+    transform: scale(1.05) translateY(-3px);
+    box-shadow: 0 15px 30px rgba(0, 122, 192, 0.4);
+    background: #008cdb;
+  }
+
+  &:active {
+    transform: scale(0.98);
+  }
+}
+
+@keyframes animatePop {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.animate-pop {
+  animation: animatePop 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+@media (max-width: 768px) {
+  .thanks-section {
+    padding: 2rem 1rem;
+    max-width: 90%;
+  }
+
+  .creative-title {
+    font-size: 2rem;
+  }
+
+  .hand-font {
+    font-size: 1.4rem;
+  }
+}

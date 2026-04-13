@@ -14,23 +14,26 @@
       <div class="form-row">
         <div class="form-group">
           <label for="nome">Nome *</label>
-          <input id="nome" type="text" formControlName="nome" placeholder="Il tuo nome">
+          <input id="nome" type="text" formControlName="nome" placeholder="Il tuo nome" autocomplete="given-name">
         </div>
         <div class="form-group">
           <label for="cognome">Cognome *</label>
-          <input id="cognome" type="text" formControlName="cognome" placeholder="Il tuo cognome">
+          <input id="cognome" type="text" formControlName="cognome" placeholder="Il tuo cognome"
+            autocomplete="family-name">
         </div>
       </div>
 
       <div class="form-row">
         <div class="form-group">
           <label for="email">Email *</label>
-          <input id="email" type="email" formControlName="email" placeholder="Per inviarti le foto dell'evento">
+          <input id="email" type="email" formControlName="email" placeholder="Per inviarti le foto dell'evento"
+            autocomplete="email">
           <small>Se ci lasci una mail ti invieremo tutte le foto dell'evento!</small>
         </div>
         <div class="form-group">
           <label for="cellulare">Cellulare *</label>
-          <input id="cellulare" type="tel" formControlName="cellulare" placeholder="Per comunicazioni urgenti">
+          <input id="cellulare" type="tel" formControlName="cellulare" placeholder="Per comunicazioni urgenti"
+            autocomplete="tel">
         </div>
       </div>
 

@@ -1,0 +1,43 @@
+<section class="thanks-container container mt-2 mb-2 d-flex-center relative-container">
+  <div class="thanks-section paper-effect">
+    <div class="tape-large"></div>
+    
+    <div class="content-wrapper text-center">
+      <h2 class="text-solar creative-title animate-pop">GRAZIE A TUTTI!</h2>
+      
+      <div class="message-body">
+        <p class="lead">L'evento per il nostro <strong>50esimo Anniversario</strong> è stato un successo incredibile grazie alla vostra partecipazione.</p>
+      </div>
+
+      <div class="divider"></div>
+
+      <!-- Photo Highlight Strip -->
+      <div class="highlights-strip-container">
+        <div class="highlights-track">
+          <!-- Duplicate once for infinite loop effect -->
+          <div *ngFor="let photo of highlights" class="polaroid-item">
+            <div class="polaroid-inner">
+              <img [src]="photo.url" [alt]="photo.alt">
+            </div>
+          </div>
+          <div *ngFor="let photo of highlights" class="polaroid-item" aria-hidden="true">
+            <div class="polaroid-inner">
+              <img [src]="photo.url" [alt]="photo.alt">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="album-cta mt-2">
+        <h3 class="hand-font mb-1">Rivivi i momenti più belli</h3>
+        <p class="mb-2">Abbiamo raccolto tutte le foto dell'evento nel nostro album ufficiale.</p>
+        
+        <a [href]="albumLink" target="_blank" class="primary-btn pulse-button">
+          VEDI L'ALBUM FOTOGRAFICO
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

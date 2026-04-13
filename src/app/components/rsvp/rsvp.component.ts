@@ -18,7 +18,7 @@ export class RsvpComponent implements OnInit {
   isExpired = false;
 
   // Cut-off date: 15 March 2026
-  private cutoffDate = new Date('2026-03-15T23:59:59');
+  private cutoffDate = new Date('2026-04-11T23:59:59');
 
   constructor(
     private fb: FormBuilder,
@@ -28,7 +28,7 @@ export class RsvpComponent implements OnInit {
       nome: ['', Validators.required],
       cognome: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
-      cellulare: ['', [Validators.required, Validators.pattern('^[0-9]+$')]],
+      cellulare: ['', [Validators.required, Validators.pattern('^[0-9+ ]+$')]], // Permetti + e spazi per l'autofill
       presenza: ['SI', Validators.required],
       adulti: [0],
       bambini: [0],
@@ -64,7 +64,11 @@ export class RsvpComponent implements OnInit {
     this.submitStatus = 'idle';
     this.rsvpForm.disable();
 
-    this.sheetsService.postRSVP(this.rsvpForm.getRawValue()).pipe(
+    const formData = { ...this.rsvpForm.getRawValue() };
+    // Pulizia cellulare: rimuove tutto ciò che non è un numero
+    formData.cellulare = formData.cellulare.replace(/\D/g, '');
+
+    this.sheetsService.postRSVP(formData).pipe(
       finalize(() => {
         this.isSubmitting = false;
         // Keep form disabled on success, or re-enable on error

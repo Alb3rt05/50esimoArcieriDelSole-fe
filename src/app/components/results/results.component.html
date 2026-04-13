@@ -1,0 +1,60 @@
+<section class="results-magazine container mt-4 mb-4 relative-container">
+    <div class="text-center mb-5">
+        <div class="trophy-icon animate-bounce">🏆</div>
+        <h2 class="text-solar creative-title">RISULTATI DELLA GARA</h2>
+        <p class="subtitle">Classifiche definitive (11-04-2026)</p>
+    </div>
+
+    <!-- Magazine Flow -->
+    <div class="mag-flow">
+        <div *ngFor="let cat of categories; let i = index" class="mag-row" [class.reverse]="i % 2 !== 0">
+            <!-- Image Column -->
+            <div class="mag-image-col">
+                <div class="image-wrapper" [class.tilt-left]="cat.tilt === 'left'" [class.tilt-right]="cat.tilt === 'right'">
+                    <img [src]="cat.image" [alt]="cat.name">
+                    <div class="solar-accent-box"></div>
+                </div>
+            </div>
+
+            <!-- Table Column -->
+            <div class="mag-text-col">
+                <div class="category-header">
+                    <h3 class="category-title">{{ cat.name }}</h3>
+                </div>
+                <div class="results-wrapper paper-effect">
+                    <div class="results-table-container">
+                        <table class="results-table">
+                            <thead>
+                                <tr>
+                                    <th class="rank-col">Pos.</th>
+                                    <th>Atleta</th>
+                                    <th class="score-col">Punti</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let res of cat.data" [class.podium]="res.rank <= 3">
+                                    <td>
+                                        <span class="rank-badge" [ngClass]="'rank-' + res.rank">
+                                            {{ res.rank }}
+                                        </span>
+                                    </td>
+                                    <td class="name-cell">{{ res.athlete }}</td>
+                                    <td class="score-cell">{{ res.score }}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Official Document Download -->
+    <div class="download-section mt-5 text-center">
+        <p class="hand-font mb-1">Vuoi scaricare la classifica ufficiale completa?</p>
+        <a href="assets/results/doc-6.pdf" target="_blank" class="download-btn">
+            <img src="https://img.icons8.com/color/48/000000/pdf.png" alt="PDF" class="icon">
+            SCARICA PDF UFFICIALE
+        </a>
+    </div>
+</section>
